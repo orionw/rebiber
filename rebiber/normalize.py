@@ -25,7 +25,7 @@ def has_integer(line):
 
 def is_contain_var(line):
     if "month=" in line.lower().replace(" ",""):
-        return True # special case
+        return False # special case
     line_clean = line.lower().replace(" ","")
     if "=" in line_clean:
         # We ask if there is {, ', ", or if there is an integer in the line (since integer input is allowed)

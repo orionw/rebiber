@@ -61,7 +61,7 @@ def build_json(all_bib_entries):
     all_bib_dict = {}
     num_expections = 0
     for bib_entry in tqdm(all_bib_entries[:]):
-        bib_entry_str = " ".join([line for line in bib_entry if "month" not in line.lower()]).lower()
+        bib_entry_str = " ".join([line for line in bib_entry]).lower()
         try:
             bib_entry_parsed = bibtexparser.loads(bib_entry_str)
             bib_key = normalize_title(bib_entry_parsed.entries[0]["title"])
